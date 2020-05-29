@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class RotatingArray {
 	
 	
-	//Rotate the given array by middle times toward left
+	/*Rotatating the provided array toward left */
     public static void rotate(int array[], int size){
     
      for(int i = 0; i < size; i++){  
