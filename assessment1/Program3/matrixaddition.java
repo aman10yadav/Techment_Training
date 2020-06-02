@@ -71,7 +71,7 @@ public class matrixaddition {
 	          }
 	    	else      
 	         {
-	            System.out.println("As rows1 does not equal to row2 or column1 does not equal to column2");
+	            System.out.println("As rows1 does not equal to row2 or column1 does not equal to column2 addition is not possible !!");
 	          }
 	 }
 }
