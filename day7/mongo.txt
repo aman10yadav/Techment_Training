@@ -1,0 +1,678 @@
+C:\Program Files\MongoDB\Server\3.2\bin>mongo.exe
+MongoDB shell version: 3.2.15
+connecting to: test
+Server has startup warnings:
+2020-06-02T20:25:04.828+0530 I CONTROL  [initandlisten]
+2020-06-02T20:25:04.828+0530 I CONTROL  [initandlisten] ** WARNING: This 32-bit
+MongoDB binary is deprecated
+2020-06-02T20:25:04.828+0530 I CONTROL  [initandlisten]
+2020-06-02T20:25:04.830+0530 I CONTROL  [initandlisten]
+2020-06-02T20:25:04.833+0530 I CONTROL  [initandlisten] ** NOTE: This is a 32 bi
+t MongoDB binary.
+2020-06-02T20:25:04.834+0530 I CONTROL  [initandlisten] **       32 bit builds a
+re limited to less than 2GB of data (or less with --journal).
+2020-06-02T20:25:04.836+0530 I CONTROL  [initandlisten] **       Note that journ
+aling defaults to off for 32 bit and is currently off.
+2020-06-02T20:25:04.838+0530 I CONTROL  [initandlisten] **       See http://doch
+ub.mongodb.org/core/32bit
+2020-06-02T20:25:04.840+0530 I CONTROL  [initandlisten]
+> show dbs
+local  0.078GB
+>use techment
+switched to db techment
+>db.createCollection("emp")
+{ "ok" : 1}
+>db.emp.insert( {"_id":101,"name":"amar","age":21,"dept" : "hr","salary" : 40000,"mob" : 9876543210,"address" : "bsp"} )
+WriteResult({ "nInserted" : 1 }) 
+>db.emp.insert( {"_id" : 102,"name" : "ankit","age" : 22,"dept" : "developer","salary" : 45000,"mob" : 9878453210,"address" : "krb"} )
+WriteResult({ "nInserted" : 1 }) 
+>db.emp.insert( {"_id" : 103,"name" : "arvind","age" : 22,"dept" : "manager","salary" : 50000,"mob" : 9873453210,"address" : "kormi"} )
+WriteResult({ "nInserted" : 1 })
+>db.emp.insert( {"_id" : 104,"name" : "prakash","age" : 25,"dept" : "developer","salary" : 55000,"mob" : 9873963810,"address" : "bemetara"} )
+WriteResult({ "nInserted" : 1 }) 
+>db.emp.insert( {"_id" : 105,"name" : "surendra","age" : 23,"dept" : "tester","salary" : 65000,"mob" : 9873929810,"address" : "raipur"} )
+WriteResult({ "nInserted" : 1 }) 
+>db.emp.insert( {"_id" : 106,"name" : "kamal","age" : 24,"dept" : "tester","salary" : 75000,"mob" : 9873687810,"address" : "bhilai"} )
+WriteResult({ "nInserted" : 1 }) 
+>db.emp.insert( { "_id" : 107,"name" : "swarnim","age" : 21,"dept" : "developer","salary" : 80000,"mob" : 9873694610,"address" : "kawardha"} )
+WriteResult({ "nInserted" : 1 }) 
+>db.emp.find().pretty()
+{
+        "_id" : 101,
+        "name" : "amar",
+        "age" : 21,
+        "dept" : "hr",
+        "salary" : 40000,
+        "mob" : 9876543210,
+        "address" : "bsp"
+}
+{
+        "_id" : 102,
+        "name" : "ankit",
+        "age" : 22,
+        "dept" : "developer",
+        "salary" : 45000,
+        "mob" : 9878453210,
+        "address" : "krb"
+}
+{
+        "_id" : 103,
+        "name" : "arvind",
+        "age" : 22,
+        "dept" : "manager",
+        "salary" : 50000,
+        "mob" : 9873453210,
+        "address" : "kormi"
+}
+{
+        "_id" : 104,
+        "name" : "prakash",
+        "age" : 25,
+        "dept" : "developer",
+        "salary" : 55000,
+        "mob" : 9873963810,
+        "address" : "bemetara"
+}
+{
+        "_id" : 105,
+        "name" : "surendra",
+        "age" : 23,
+        "dept" : "tester",
+        "salary" : 65000,
+        "mob" : 9873929810,
+        "address" : "raipur"
+}
+{
+        "_id" : 106,
+        "name" : "kamal",
+        "age" : 24,
+        "dept" : "tester",
+        "salary" : 75000,
+        "mob" : 9873687810,
+        "address" : "bhilai"
+}
+{
+        "_id" : 107,
+        "name" : "swarnim",
+        "age" : 21,
+        "dept" : "developer",
+        "salary" : 80000,
+        "mob" : 9873694610,
+        "address" : "kawardha"
+}
+> db.emp.find( {"salary":{$gt:65000}} ).pretty()
+{
+        "_id" : 106,
+        "name" : "kamal",
+        "age" : 24,
+        "dept" : "tester",
+        "salary" : 75000,
+        "mob" : 9873687810,
+        "address" : "bhilai"
+}
+{
+        "_id" : 107,
+        "name" : "swarnim",
+        "age" : 21,
+        "dept" : "developer",
+        "salary" : 80000,
+        "mob" : 9873694610,
+        "address" : "kawardha"
+}
+> db.emp.find( {"salary":{$gt:65000}} ).pretty()
+{
+        "_id" : 105,
+        "name" : "surendra",
+        "age" : 23,
+        "dept" : "tester",
+        "salary" : 65000,
+        "mob" : 9873929810,
+        "address" : "raipur"
+}
+{
+        "_id" : 106,
+        "name" : "kamal",
+        "age" : 24,
+        "dept" : "tester",
+        "salary" : 75000,
+        "mob" : 9873687810,
+        "address" : "bhilai"
+}
+{
+        "_id" : 107,
+        "name" : "swarnim",
+        "age" : 21,
+        "dept" : "developer",
+        "salary" : 80000,
+        "mob" : 9873694610,
+        "address" : "kawardha"
+}
+> db.emp.find( {"salary":{$lt:65000}} ).pretty()
+{
+        "_id" : 101,
+        "name" : "amar",
+        "age" : 21,
+        "dept" : "hr",
+        "salary" : 40000,
+        "mob" : 9876543210,
+        "address" : "bsp"
+}
+{
+        "_id" : 102,
+        "name" : "ankit",
+        "age" : 22,
+        "dept" : "developer",
+        "salary" : 45000,
+        "mob" : 9878453210,
+        "address" : "krb"
+}
+{
+        "_id" : 103,
+        "name" : "arvind",
+        "age" : 22,
+        "dept" : "manager",
+        "salary" : 50000,
+        "mob" : 9873453210,
+        "address" : "kormi"
+}
+{
+        "_id" : 104,
+        "name" : "prakash",
+        "age" : 25,
+        "dept" : "developer",
+        "salary" : 55000,
+        "mob" : 9873963810,
+        "address" : "bemetara"
+}
+> db.emp.find( {"salary":{$lte:65000}} ).pretty()
+{
+        "_id" : 101,
+        "name" : "amar",
+        "age" : 21,
+        "dept" : "hr",
+        "salary" : 40000,
+        "mob" : 9876543210,
+        "address" : "bsp"
+}
+{
+        "_id" : 102,
+        "name" : "ankit",
+        "age" : 22,
+        "dept" : "developer",
+        "salary" : 45000,
+        "mob" : 9878453210,
+        "address" : "krb"
+}
+{
+        "_id" : 103,
+        "name" : "arvind",
+        "age" : 22,
+        "dept" : "manager",
+        "salary" : 50000,
+        "mob" : 9873453210,
+        "address" : "kormi"
+}
+{
+        "_id" : 104,
+        "name" : "prakash",
+        "age" : 25,
+        "dept" : "developer",
+        "salary" : 55000,
+        "mob" : 9873963810,
+        "address" : "bemetara"
+}
+{
+        "_id" : 105,
+        "name" : "surendra",
+        "age" : 23,
+        "dept" : "tester",
+        "salary" : 65000,
+        "mob" : 9873929810,
+        "address" : "raipur"
+}
+> db.emp.find( {"salary":{$eq:45000}} ).pretty()
+{
+        "_id" : 102,
+        "name" : "ankit",
+        "age" : 22,
+        "dept" : "developer",
+        "salary" : 45000,
+        "mob" : 9878453210,
+        "address" : "krb"
+}
+> db.emp.find( {"_id":101,"name":"amar"} ).pretty()
+{
+        "_id" : 101,
+        "name" : "amar",
+        "age" : 21,
+        "dept" : "hr",
+        "salary" : 40000,
+        "mob" : 9876543210,
+        "address" : "bsp"
+}
+> db.emp.find( {$or:[{"dept":"tester","name":"kamal"}]} ).pretty()
+{
+        "_id" : 106,
+        "name" : "kamal",
+        "age" : 24,
+        "dept" : "tester",
+        "salary" : 75000,
+        "mob" : 9873687810,
+        "address" : "bhilai"
+}
+> db.emp.find().sort( {"_id":1} ).pretty()
+{
+        "_id" : 101,
+        "name" : "amar",
+        "age" : 21,
+        "dept" : "hr",
+        "salary" : 40000,
+        "mob" : 9876543210,
+        "address" : "bsp"
+}
+{
+        "_id" : 102,
+        "name" : "ankit",
+        "age" : 22,
+        "dept" : "developer",
+        "salary" : 45000,
+        "mob" : 9878453210,
+        "address" : "krb"
+}
+{
+        "_id" : 103,
+        "name" : "arvind",
+        "age" : 22,
+        "dept" : "manager",
+        "salary" : 50000,
+        "mob" : 9873453210,
+        "address" : "kormi"
+}
+{
+        "_id" : 104,
+        "name" : "prakash",
+        "age" : 25,
+        "dept" : "developer",
+        "salary" : 55000,
+        "mob" : 9873963810,
+        "address" : "bemetara"
+}
+{
+        "_id" : 105,
+        "name" : "surendra",
+        "age" : 23,
+        "dept" : "tester",
+        "salary" : 65000,
+        "mob" : 9873929810,
+        "address" : "raipur"
+}
+{
+        "_id" : 106,
+        "name" : "kamal",
+        "age" : 24,
+        "dept" : "tester",
+        "salary" : 75000,
+        "mob" : 9873687810,
+        "address" : "bhilai"
+}
+{
+        "_id" : 107,
+        "name" : "swarnim",
+        "age" : 21,
+        "dept" : "developer",
+        "salary" : 80000,
+        "mob" : 9873694610,
+        "address" : "kawardha"
+}
+> db.emp.find().sort( {"_id":-1} ).pretty()
+{
+        "_id" : 107,
+        "name" : "swarnim",
+        "age" : 21,
+        "dept" : "developer",
+        "salary" : 80000,
+        "mob" : 9873694610,
+        "address" : "kawardha"
+}
+{
+        "_id" : 106,
+        "name" : "kamal",
+        "age" : 24,
+        "dept" : "tester",
+        "salary" : 75000,
+        "mob" : 9873687810,
+        "address" : "bhilai"
+}
+{
+        "_id" : 105,
+        "name" : "surendra",
+        "age" : 23,
+        "dept" : "tester",
+        "salary" : 65000,
+        "mob" : 9873929810,
+        "address" : "raipur"
+}
+{
+        "_id" : 104,
+        "name" : "prakash",
+        "age" : 25,
+        "dept" : "developer",
+        "salary" : 55000,
+        "mob" : 9873963810,
+        "address" : "bemetara"
+}
+{
+        "_id" : 103,
+        "name" : "arvind",
+        "age" : 22,
+        "dept" : "manager",
+        "salary" : 50000,
+        "mob" : 9873453210,
+        "address" : "kormi"
+}
+{
+        "_id" : 102,
+        "name" : "ankit",
+        "age" : 22,
+        "dept" : "developer",
+        "salary" : 45000,
+        "mob" : 9878453210,
+        "address" : "krb"
+}
+{
+        "_id" : 101,
+        "name" : "amar",
+        "age" : 21,
+        "dept" : "hr",
+        "salary" : 40000,
+        "mob" : 9876543210,
+        "address" : "bsp"
+}
+> db.emp.find().skip(3).sort( {"_id":1} ).pretty()
+{
+        "_id" : 104,
+        "name" : "prakash",
+        "age" : 25,
+        "dept" : "developer",
+        "salary" : 55000,
+        "mob" : 9873963810,
+        "address" : "bemetara"
+}
+{
+        "_id" : 105,
+        "name" : "surendra",
+        "age" : 23,
+        "dept" : "tester",
+        "salary" : 65000,
+        "mob" : 9873929810,
+        "address" : "raipur"
+}
+{
+        "_id" : 106,
+        "name" : "kamal",
+        "age" : 24,
+        "dept" : "tester",
+        "salary" : 75000,
+        "mob" : 9873687810,
+        "address" : "bhilai"
+}
+{
+        "_id" : 107,
+        "name" : "swarnim",
+        "age" : 21,
+        "dept" : "developer",
+        "salary" : 80000,
+        "mob" : 9873694610,
+        "address" : "kawardha"
+}
+> db.emp.find().skip(2).sort( {"_id":-1} ).pretty()
+{
+        "_id" : 105,
+        "name" : "surendra",
+        "age" : 23,
+        "dept" : "tester",
+        "salary" : 65000,
+        "mob" : 9873929810,
+        "address" : "raipur"
+}
+{
+        "_id" : 104,
+        "name" : "prakash",
+        "age" : 25,
+        "dept" : "developer",
+        "salary" : 55000,
+        "mob" : 9873963810,
+        "address" : "bemetara"
+}
+{
+        "_id" : 103,
+        "name" : "arvind",
+        "age" : 22,
+        "dept" : "manager",
+        "salary" : 50000,
+        "mob" : 9873453210,
+        "address" : "kormi"
+}
+{
+        "_id" : 102,
+        "name" : "ankit",
+        "age" : 22,
+        "dept" : "developer",
+        "salary" : 45000,
+        "mob" : 9878453210,
+        "address" : "krb"
+}
+{
+        "_id" : 101,
+        "name" : "amar",
+        "age" : 21,
+        "dept" : "hr",
+        "salary" : 40000,
+        "mob" : 9876543210,
+        "address" : "bsp"
+}
+> db.emp.update({"_id":{$gt:"106"}},{$set:{"dept":"hr"}},{"multi":true})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.emp.find().pretty()
+{
+        "_id" : 101,
+        "name" : "amar",
+        "age" : 21,
+        "dept" : "hr",
+        "salary" : 40000,
+        "mob" : 9876543210,
+        "address" : "bsp"
+}
+{
+        "_id" : 102,
+        "name" : "ankit",
+        "age" : 22,
+        "dept" : "developer",
+        "salary" : 45000,
+        "mob" : 9878453210,
+        "address" : "krb"
+}
+{
+        "_id" : 103,
+        "name" : "arvind",
+        "age" : 22,
+        "dept" : "manager",
+        "salary" : 50000,
+        "mob" : 9873453210,
+        "address" : "kormi"
+}
+{
+        "_id" : 104,
+        "name" : "prakash",
+        "age" : 25,
+        "dept" : "developer",
+        "salary" : 55000,
+        "mob" : 9873963810,
+        "address" : "bemetara"
+}
+{
+        "_id" : 105,
+        "name" : "surendra",
+        "age" : 23,
+        "dept" : "tester",
+        "salary" : 65000,
+        "mob" : 9873929810,
+        "address" : "raipur"
+}
+{
+        "_id" : 106,
+        "name" : "kamal",
+        "age" : 24,
+        "dept" : "tester",
+        "salary" : 75000,
+        "mob" : 9873687810,
+        "address" : "bhilai"
+}
+{
+        "_id" : 107,
+        "name" : "swarnim",
+        "age" : 21,
+        "dept" : "developer",
+        "salary" : 80000,
+        "mob" : 9873694610,
+        "address" : "kawardha"
+}
+> db.emp.update({"_id":{$gt:"105"}},{$set:{"dept":"hr"}},{"multi":true})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.emp.update({"_id":{$gt:"105"}},{$set:{"dept":"hr"}},{"multi":true})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.emp.update({"_id":{$gt:105}},{$set:{"dept":"hr"}},{"multi":true})
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+> db.emp.find().pretty()
+{
+        "_id" : 101,
+        "name" : "amar",
+        "age" : 21,
+        "dept" : "hr",
+        "salary" : 40000,
+        "mob" : 9876543210,
+        "address" : "bsp"
+}
+{
+        "_id" : 102,
+        "name" : "ankit",
+        "age" : 22,
+        "dept" : "developer",
+        "salary" : 45000,
+        "mob" : 9878453210,
+        "address" : "krb"
+}
+{
+        "_id" : 103,
+        "name" : "arvind",
+        "age" : 22,
+        "dept" : "manager",
+        "salary" : 50000,
+        "mob" : 9873453210,
+        "address" : "kormi"
+}
+{
+        "_id" : 104,
+        "name" : "prakash",
+        "age" : 25,
+        "dept" : "developer",
+        "salary" : 55000,
+        "mob" : 9873963810,
+        "address" : "bemetara"
+}
+{
+        "_id" : 105,
+        "name" : "surendra",
+        "age" : 23,
+        "dept" : "tester",
+        "salary" : 65000,
+        "mob" : 9873929810,
+        "address" : "raipur"
+}
+{
+        "_id" : 106,
+        "name" : "kamal",
+        "age" : 24,
+        "dept" : "hr",
+        "salary" : 75000,
+        "mob" : 9873687810,
+        "address" : "bhilai"
+}
+{
+        "_id" : 107,
+        "name" : "swarnim",
+        "age" : 21,
+        "dept" : "hr",
+        "salary" : 80000,
+        "mob" : 9873694610,
+        "address" : "kawardha"
+}
+> db.emp.aggregate( {$group: {"_id":"$dept","AvgSalary":{$sum:"$salary"} }})
+{ "_id" : "tester", "AvgSalary" : 65000 }
+{ "_id" : "manager", "AvgSalary" : 50000 }
+{ "_id" : "developer", "AvgSalary" : 100000 }
+{ "_id" : "hr", "AvgSalary" : 195000 }
+> db.emp.aggregate( {$group: {"_id":"$dept","sumSalary":{$sum:"$salary"} }})
+{ "_id" : "tester", "sumSalary" : 65000 }
+{ "_id" : "manager", "sumSalary" : 50000 }
+{ "_id" : "developer", "sumSalary" : 100000 }
+{ "_id" : "hr", "sumSalary" : 195000 }
+> db.emp.aggregate( {$group: {"_id":"$dept","sumSalary":{$sum:"$salary"},"avgsal
+ary":{$avg:"salary"} }})
+{ "_id" : "tester", "sumSalary" : 65000, "avgsalary" : null }
+{ "_id" : "manager", "sumSalary" : 50000, "avgsalary" : null }
+{ "_id" : "developer", "sumSalary" : 100000, "avgsalary" : null }
+{ "_id" : "hr", "sumSalary" : 195000, "avgsalary" : null }
+> db.emp.aggregate( {$group: {"_id":"$dept","sumSalary":{$sum:"$salary"},"avgsal
+ary":{$avg:"$salary"} }})
+{ "_id" : "tester", "sumSalary" : 65000, "avgsalary" : 65000 }
+{ "_id" : "manager", "sumSalary" : 50000, "avgsalary" : 50000 }
+{ "_id" : "developer", "sumSalary" : 100000, "avgsalary" : 50000 }
+{ "_id" : "hr", "sumSalary" : 195000, "avgsalary" : 65000 }
+> db.emp.aggregate( {$group: {"_id":"$dept","sumSalary":{$sum:"$salary"},"avgsal
+ary":{$avg:"$salary"},"maxsalary":{"$max":"$salary"},"minsalary":{"$min":"$salar
+y"} }})
+{ "_id" : "tester", "sumSalary" : 65000, "avgsalary" : 65000, "maxsalary" : 6500
+0, "minsalary" : 65000 }
+{ "_id" : "manager", "sumSalary" : 50000, "avgsalary" : 50000, "maxsalary" : 500
+00, "minsalary" : 50000 }
+{ "_id" : "developer", "sumSalary" : 100000, "avgsalary" : 50000, "maxsalary" :
+55000, "minsalary" : 45000 }
+{ "_id" : "hr", "sumSalary" : 195000, "avgsalary" : 65000, "maxsalary" : 80000,
+"minsalary" : 40000 }
+> db.emp.aggregate( {$group: {"_id":"$dept","sumSalary":{$sum:"$salary"},"avgsal
+ary":{$avg:"$salary"},"maxsalary":{"$max":"$salary"},"minsalary":{"$min":"$salar
+y"} }}).pretty()
+{
+        "_id" : "tester",
+        "sumSalary" : 65000,
+        "avgsalary" : 65000,
+        "maxsalary" : 65000,
+        "minsalary" : 65000
+}
+{
+        "_id" : "manager",
+        "sumSalary" : 50000,
+        "avgsalary" : 50000,
+        "maxsalary" : 50000,
+        "minsalary" : 50000
+}
+{
+        "_id" : "developer",
+        "sumSalary" : 100000,
+        "avgsalary" : 50000,
+        "maxsalary" : 55000,
+        "minsalary" : 45000
+}
+{
+        "_id" : "hr",
+        "sumSalary" : 195000,
+        "avgsalary" : 65000,
+        "maxsalary" : 80000,
+        "minsalary" : 40000
+}
+>
+
+
+
+
