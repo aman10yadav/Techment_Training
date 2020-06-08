@@ -1,0 +1,198 @@
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github$ git clone 'https://github.com/aman10yadav/gitlearningday2.git'
+Cloning into 'gitlearningday2'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github$ cd gitlearningday2
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	add.txt
+	subtract.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git add .
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   add.txt
+	new file:   subtract.txt
+
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git commit -m "Commit successfully"
+[master ba834e8] Commit successfully
+ 2 files changed, 2 insertions(+)
+ create mode 100644 add.txt
+ create mode 100644 subtract.txt
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git push
+Username for 'https://github.com': aman10yadav
+Password for 'https://aman10yadav@github.com': 
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 340 bytes | 340.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/aman10yadav/gitlearningday2.git
+   a988e7f..ba834e8  master -> master
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/aman10yadav/gitlearningday2
+   ba834e8..9cd52b1  master     -> origin/master
+Updating ba834e8..9cd52b1
+Fast-forward
+ multiply.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
+ create mode 100644 multiply.txt
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git branch
+* master
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git branch branchdiv
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git branch
+  branchdiv
+* master
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git checkout branchdiv
+Switched to branch 'branchdiv'
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git branch
+* branchdiv
+  master
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git add div.txt
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git status
+On branch branchdiv
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   div.txt
+
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git commit -m "Adding new feature"
+[branchdiv 8c613e4] Adding new feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 div.txt
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git branch master
+fatal: A branch named 'master' already exists.
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git chekout master
+git: 'chekout' is not a git command. See 'git --help'.
+
+The most similar command is
+	checkout
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git branch
+* branchdiv
+  master
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git push
+fatal: The current branch branchdiv has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin branchdiv
+
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git push -u origin master
+Username for 'https://github.com': aman10yadav
+Password for 'https://aman10yadav@github.com': 
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+Everything up-to-date
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git push -u origin branchdiv
+Username for 'https://github.com': aman10yadav
+Password for 'https://aman10yadav@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 279 bytes | 279.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'branchdiv' on GitHub by visiting:
+remote:      https://github.com/aman10yadav/gitlearningday2/pull/new/branchdiv
+remote: 
+To https://github.com/aman10yadav/gitlearningday2.git
+ * [new branch]      branchdiv -> branchdiv
+Branch 'branchdiv' set up to track remote branch 'branchdiv' from 'origin'.
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git branch
+* branchdiv
+  master
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git checkout branch issueforadd
+error: pathspec 'branch' did not match any file(s) known to git.
+error: pathspec 'issueforadd' did not match any file(s) known to git.
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git checkout -b  branch issueforadd
+fatal: 'issueforadd' is not a commit and a branch 'branch' cannot be created from it
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git branch issueforadd
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git checkout issueforadd
+M	add.txt
+Switched to branch 'issueforadd'
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git add add.txt
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git status
+On branch issueforadd
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   add.txt
+
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git commit -m 'Modified Successfully"
+> 
+> git commit -m 'Modified Successfully"
+> bash: unexpected EOF while looking for matching `"'
+bash: syntax error: unexpected end of file
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git commit -m "Modified Successfully"
+[issueforadd 895658b] Modified Successfully
+ 1 file changed, 6 insertions(+)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git diff master issueforadd
+diff --git a/add.txt b/add.txt
+index 34a9e77..e631644 100644
+--- a/add.txt
++++ b/add.txt
+@@ -1 +1,7 @@
+ 1 + 2 = 3
++int main()
++{
++c = 3+6+9;
++d = 18;
++return d;
++}
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git push origin issueadd
+error: src refspec issueadd does not match any.
+error: failed to push some refs to 'https://github.com/aman10yadav/gitlearningday2.git'
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git push origin issueforadd
+Username for 'https://github.com': aman10yadav
+Password for 'https://aman10yadav@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 316 bytes | 316.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'issueforadd' on GitHub by visiting:
+remote:      https://github.com/aman10yadav/gitlearningday2/pull/new/issueforadd
+remote: 
+To https://github.com/aman10yadav/gitlearningday2.git
+ * [new branch]      issueforadd -> issueforadd
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git branch
+  branchdiv
+  issueforadd
+* master
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git merge issueforadd
+Updating 9cd52b1..895658b
+Fast-forward
+ add.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/gitlearningday2$ git push
+Username for 'https://github.com': aman10yadav
+Password for 'https://aman10yadav@github.com': 
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/aman10yadav/gitlearningday2.git
+   9cd52b1..895658b  master -> master
+

@@ -1,0 +1,3 @@
+Group centralised repositories to make an array and do sort,min,max and sum of array elements.The centralised repositories link is given below:-
+
+https://github.com/ksaurav49/gitLearning_batch1/tree/master
