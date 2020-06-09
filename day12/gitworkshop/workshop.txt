@@ -1,0 +1,624 @@
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github$ git config --global user.name "aman10yadav"
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github$ git config --global user.email "aman10yadav.ay@gmail.com"
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github$ git config --global color.ui auto
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github$ git config --global merge.conflictstyle diff3
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github$ git config --list
+user.name=aman10yadav
+user.email=aman10yadav.ay@gmail.com
+color.ui=auto
+merge.conflictstyle=diff3
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github$ ls
+ArrayProblem  Git_Demo  gitlearning_batch1  gitlearningday2
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github$ cd Git_Demo
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo$ ls
+Git_demo_project
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo$ cd Git_demo_Project
+bash: cd: Git_demo_Project: No such file or directory
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo$ cd Git_demo_project
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git init
+Initialized empty Git repository in /media/aman/study/github/Git_Demo/Git_demo_project/.git/
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	css/
+	index.html
+	js/
+
+nothing added to commit but untracked files present (use "git add" to track)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add index.html
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	css/
+	js/
+
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+	add
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add .
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   css/style.css
+	new file:   index.html
+	new file:   js/app.js
+
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git commit -m "Initial commit"
+[master (root-commit) d79837f] Initial commit
+ 3 files changed, 15 insertions(+)
+ create mode 100644 css/style.css
+ create mode 100644 index.html
+ create mode 100644 js/app.js
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git status
+On branch master
+nothing to commit, working tree clean
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add index.html
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git commit -m "add header to body"
+[master c92e165] add header to body
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git commit -m "add page style"
+On branch master
+Changes not staged for commit:
+	modified:   index.html
+
+no changes added to commit
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add index.html
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git commit -m "add page style"
+[master 92ccb08] add page style
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add index.html
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git commit -m "add leap year section"
+[master c643a67] add leap year section
+ 1 file changed, 4 insertions(+)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add index.html
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add index.html
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git commit -m "add button"
+[master fcab148] add button
+ 1 file changed, 5 insertions(+)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add index.html
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git commit -m "add welcome message"
+[master ac21aa2] add welcome message
+ 1 file changed, 1 insertion(+)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add index.html
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git commit -m "add header to body"
+[master 815609f] add header to body
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add index.html
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git commit -m "initial commit"
+[master 1dedb91] initial commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git log
+commit 1dedb914b17b86728fa3cfb77694c374bff0ac62 (HEAD -> master)
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:40:33 2020 +0530
+
+    initial commit
+
+commit 815609fefdabe8da4610c1d722f8a368e865a00f
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:38:49 2020 +0530
+
+    add header to body
+
+commit ac21aa29bb8ac20a05fb80077ab0ceea53bff9f9
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:36:34 2020 +0530
+
+    add welcome message
+
+commit fcab148364724fa33f9fd3a24104621a0010b27b
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:34:10 2020 +0530
+
+    add button
+
+commit c643a672be3cae5b4747d614f6bb552eddbe0879
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:30:28 2020 +0530
+
+    add leap year section
+
+commit 92ccb08c6a44704af547d8c5422c376b75170408
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:25:56 2020 +0530
+
+    add page style
+
+commit c92e165b01366203f6f74a6473fadb6eea503008
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:20:26 2020 +0530
+
+    add header to body
+
+commit d79837f5accdf926c2de4b100d25af896e13290f
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:17:50 2020 +0530
+
+    Initial commit
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git log --online
+fatal: unrecognized argument: --online
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git log --oneline
+1dedb91 (HEAD -> master) initial commit
+815609f add header to body
+ac21aa2 add welcome message
+fcab148 add button
+c643a67 add leap year section
+92ccb08 add page style
+c92e165 add header to body
+d79837f Initial commit
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git log --stat
+commit 1dedb914b17b86728fa3cfb77694c374bff0ac62 (HEAD -> master)
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:40:33 2020 +0530
+
+    initial commit
+
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 815609fefdabe8da4610c1d722f8a368e865a00f
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:38:49 2020 +0530
+
+    add header to body
+
+ index.html | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+commit ac21aa29bb8ac20a05fb80077ab0ceea53bff9f9
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:36:34 2020 +0530
+
+    add welcome message
+
+ index.html | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit fcab148364724fa33f9fd3a24104621a0010b27b
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:34:10 2020 +0530
+
+    add button
+
+ index.html | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit c643a672be3cae5b4747d614f6bb552eddbe0879
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:30:28 2020 +0530
+
+    add leap year section
+
+ index.html | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 92ccb08c6a44704af547d8c5422c376b75170408
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:25:56 2020 +0530
+
+    add page style
+
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c92e165b01366203f6f74a6473fadb6eea503008
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:20:26 2020 +0530
+
+    add header to body
+
+ index.html | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit d79837f5accdf926c2de4b100d25af896e13290f
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:17:50 2020 +0530
+
+    Initial commit
+
+ css/style.css |  0
+ index.html    | 15 +++++++++++++++
+ js/app.js     |  0
+ 3 files changed, 15 insertions(+)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git log -p
+commit 1dedb914b17b86728fa3cfb77694c374bff0ac62 (HEAD -> master)
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:40:33 2020 +0530
+
+    initial commit
+
+diff --git a/index.html b/index.html
+index b13686e..330e5a6 100644
+--- a/index.html
++++ b/index.html
+@@ -20,10 +20,10 @@
+   <header> 
+     <h3>2 Please enter a year:</h3>
+   </header>
++  <input type="text">  
+   <header> 
+     <h4>Click on the below button</h4>
+   </header>
+-  <input type="text">
+   <input type="button">
+ </body>
+ </body>
+
+commit 815609fefdabe8da4610c1d722f8a368e865a00f
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:38:49 2020 +0530
+
+    add header to body
+
+diff --git a/index.html b/index.html
+index 33c210e..b13686e 100644
+--- a/index.html
++++ b/index.html
+@@ -14,11 +14,14 @@
+     <h1>Git Workshop</h1>
+   </header>
+   <header> 
+-    <h1>1 Please enter your name:</h1>
++    <h2>1 Please enter your name:</h2>
+   </header>
+   <input type="text">
+   <header> 
+-    <h1>2 Please enter a year:</h1>
++    <h3>2 Please enter a year:</h3>
++  </header>
++  <header> 
++    <h4>Click on the below button</h4>
+   </header>
+   <input type="text">
+   <input type="button">
+
+commit ac21aa29bb8ac20a05fb80077ab0ceea53bff9f9
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:36:34 2020 +0530
+
+    add welcome message
+
+diff --git a/index.html b/index.html
+index af885dd..33c210e 100644
+--- a/index.html
++++ b/index.html
+@@ -9,6 +9,7 @@
+      <link rel="stylesheet" href="css/app.css">
+ </head>
+ <body bgcolor="green">
++  <p>Welcome Everyone</p>
+   <header> 
+     <h1>Git Workshop</h1>
+   </header>
+
+commit fcab148364724fa33f9fd3a24104621a0010b27b
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:34:10 2020 +0530
+
+    add button
+
+diff --git a/index.html b/index.html
+index 29824ed..af885dd 100644
+--- a/index.html
++++ b/index.html
+@@ -16,6 +16,11 @@
+     <h1>1 Please enter your name:</h1>
+   </header>
+   <input type="text">
++  <header> 
++    <h1>2 Please enter a year:</h1>
++  </header>
++  <input type="text">
++  <input type="button">
+ </body>
+ </body>
+ </html>
+
+commit c643a672be3cae5b4747d614f6bb552eddbe0879
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:30:28 2020 +0530
+
+    add leap year section
+
+diff --git a/index.html b/index.html
+index ccfcc74..29824ed 100644
+--- a/index.html
++++ b/index.html
+@@ -12,6 +12,10 @@
+   <header> 
+     <h1>Git Workshop</h1>
+   </header>
++  <header> 
++    <h1>1 Please enter your name:</h1>
++  </header>
++  <input type="text">
+ </body>
+ </body>
+ </html>
+
+commit 92ccb08c6a44704af547d8c5422c376b75170408
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:25:56 2020 +0530
+
+    add page style
+
+diff --git a/index.html b/index.html
+index cebc93d..ccfcc74 100644
+--- a/index.html
++++ b/index.html
+@@ -8,7 +8,7 @@
+      <meta name="description" content="">
+      <link rel="stylesheet" href="css/app.css">
+ </head>
+-<body>
++<body bgcolor="green">
+   <header> 
+     <h1>Git Workshop</h1>
+   </header>
+
+commit c92e165b01366203f6f74a6473fadb6eea503008
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:20:26 2020 +0530
+
+    add header to body
+
+diff --git a/index.html b/index.html
+index 28a79dd..cebc93d 100644
+--- a/index.html
++++ b/index.html
+@@ -9,7 +9,9 @@
+      <link rel="stylesheet" href="css/app.css">
+ </head>
+ <body>
+-
+-
++  <header> 
++    <h1>Git Workshop</h1>
++  </header>
++</body>
+ </body>
+ </html>
+
+commit d79837f5accdf926c2de4b100d25af896e13290f
+Author: aman10yadav <aman10yadav.ay@gmail.com>
+Date:   Tue Jun 9 14:17:50 2020 +0530
+
+    Initial commit
+
+diff --git a/css/style.css b/css/style.css
+new file mode 100644
+index 0000000..e69de29
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000..28a79dd
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,15 @@
++<!Doctype html>
++<html lang="en">
++<head>
++     <Script src="js/app.js"></script>
++     <meta charset="utf-8">
++     <title>Git Workspace</title>
++     <meta name="viewport" content="width+device-width,initial-scale=1">
++     <meta name="description" content="">
++     <link rel="stylesheet" href="css/app.css">
++</head>
++<body>
++
++
++</body>
++</html>
+diff --git a/js/app.js b/js/app.js
+new file mode 100644
+index 0000000..e69de29
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ 
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git branch
+* master
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add .
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git commit -m "add changes in master branch"
+[master 687cc50] add changes in master branch
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git branch sidebar
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git checkout sidebar
+Switched to branch 'sidebar'
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add .
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git commit -m "add changes in sidebar branch"
+[sidebar 3b6854a] add changes in sidebar branch
+ 2 files changed, 13 insertions(+), 1 deletion(-)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git checkout master
+Switched to branch 'master'
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git merge sidebar -m "merge the sidebar to newly styled main page"
+Updating 687cc50..3b6854a
+Fast-forward (no commit created; -m option ignored)
+ css/style.css | 7 +++++++
+ index.html    | 7 ++++++-
+ 2 files changed, 13 insertions(+), 1 deletion(-)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git remote add origin https://github.com/aman10yadav/Git-Github-Lab.git
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git push -u origin master
+Username for 'https://github.com': aman10yadav
+Password for 'https://aman10yadav@github.com': 
+To https://github.com/aman10yadav/Git-Github-Lab.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/aman10yadav/Git-Github-Lab.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git pull
+warning: no common commits
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/aman10yadav/Git-Github-Lab
+ * [new branch]      master     -> origin/master
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git branch
+* master
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add .
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git commit -m "add changes in master branch"
+[master 687cc50] add changes in master branch
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git branch sidebar
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git checkout sidebar
+Switched to branch 'sidebar'
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git add .
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git commit -m "add changes in sidebar branch"
+[sidebar 3b6854a] add changes in sidebar branch
+ 2 files changed, 13 insertions(+), 1 deletion(-)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git checkout master
+Switched to branch 'master'
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git merge sidebar -m "merge the sidebar to newly styled main page"
+Updating 687cc50..3b6854a
+Fast-forward (no commit created; -m option ignored)
+ css/style.css | 7 +++++++
+ index.html    | 7 ++++++-
+ 2 files changed, 13 insertions(+), 1 deletion(-)
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git remote add origin https://github.com/aman10yadav/Git-Github-Lab.git
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git push -u origin master
+Username for 'https://github.com': aman10yadav
+Password for 'https://aman10yadav@github.com': 
+To https://github.com/aman10yadav/Git-Github-Lab.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/aman10yadav/Git-Github-Lab.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git pull
+warning: no common commits
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/aman10yadav/Git-Github-Lab
+ * [new branch]      master     -> origin/master
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$ git push -u origin master --force
+Username for 'https://github.com': aman10yadav
+Password for 'https://aman10yadav@github.com': 
+Counting objects: 87, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (72/72), done.
+Writing objects: 100% (87/87), 8.91 KiB | 456.00 KiB/s, done.
+Total 87 (delta 28), reused 0 (delta 0)
+remote: Resolving deltas: 100% (28/28), done.
+To https://github.com/aman10yadav/Git-Github-Lab.git
+ + f76cfe2...3b6854a master -> master (forced update)
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+aman@aman-HP-Laptop-15-bs0xx:/media/aman/study/github/Git_Demo/Git_demo_project$
+
+
+
+
+
+
+
+
+
+Link for repositories is given below :-
+
+https://github.com/aman10yadav/Git-Github-Lab
+
+
