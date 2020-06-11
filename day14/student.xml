@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE std SYSTEM "studentstructure.dtd">
+<students>
+
+	<student>
+		<sid>1001</sid>
+		<name>Arvind</name>
+		<dept>CSE</dept>
+		<batch>2016</batch>
+	</student>
+	
+	<student>
+		<sid>1002</sid>
+		<name>Prakash</name>
+		<dept>IT</dept>
+		<batch>2018</batch>
+	</student>
+	
+	<student>
+		<sid>1003</sid>
+		<name>Ankit</name>
+		<dept>CSE</dept>
+		<batch>2017</batch>
+	</student>
+
+	<student>
+		<sid>1004</sid>
+		<name>Rahul</name>
+		<dept>IT</dept>
+		<batch>2019</batch>
+	</student>
+</students>
