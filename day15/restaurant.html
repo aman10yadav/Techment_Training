@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+var menu = {
+			"fastfood":
+				[
+				  {"id":1,"name":"pasta"},
+				  {"id":2,"name":"maggi"},
+				  {"id":3,"name":"burger"}
+				 ],
+			"drinks":
+				[
+					{"id":4,"name":"Cocacola"},
+					{"id":5,"name":"sprite"}
+				]
+		};
+		
+	document.write("FAST FOOD CATEGORY <br>");
+	for(i in menu.fastfood)
+		{
+			document.write(menu.fastfood[i].id+"   "+menu.fastfood[i].name+"<br>");
+		}
+	
+	document.write("<br>DRINKS CATEGORY <br>");
+	for(i in menu.fastfood)
+	{
+	document.write(menu.drinks[i].id+"    "+menu.drinks[i].name+"<br>");
+	}
+</script>
+
+</body>
+</html>
