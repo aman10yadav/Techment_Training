@@ -1,0 +1,86 @@
+Answer 2 :-
+create table category(categoryid int(4) PRIMARY KEY,label char(20),description char(40));
+
+create table office(locationid int(4) PRIMARY KEY,street char(20),number char(20),city char(20),state char(20),country char(25),deftel int(10),FOREIGN KEY (deftel) REFERENCES telephone(deftel));
+
+create table reservation(reservationid int(4),customerid int(4),carid int(4),amount int(7),pickupdate date,returndate date,pikuplocationid int(4),returnlocationid int(4),FOREIGN KEY (pickuplocationid) REFERENCES office(locationid),FOREIGN KEY (customerid) REFERENCES customer(customerid),FOREIGN KEY (carid) REFERENCES car(carid));
+
+create table telephone(deftel int(10) PRIMARY KEY,telphone1 int(10),telephone2 int(10));
+
+create table customer(customerid int(4) PRIMARY KEY,ssn int(10),firstname char(30),lastname char(30),mobile int(10),state char(30),country char(30),email char(30));
+
+create table car(carid int(4) PRIMARY KEY,locationid int(4),categoryid int(4),color char(25),brand char(30),model char(30),description char(50),purchasedate date,FOREIGN KEY (locationid) REFERENCES office(locationid),FOREIGN KEY (categoryid) REFERENCES category(categoryid));
+
+insert into category values(101,'Automatic','Nice car');
+insert into category values(101,'self','Wonderful car');
+
+
+insert into office values(201,'sector24','doorno21','Raipur','Chhattisgarh','India',9876543210);
+insert into office values(202,'Pindidas Gali','door10','Bilaspur','Chhattisgarh','India',9876554321);
+insert into office values(203,'sector10','doorno21','Raigarh','Chhattisgarh','India',9123456780);
+
+insert into reservation values(5001,1002,501,5500000,2019-11-25,2019-12-01,201,201);
+insert into reservation values(5002,1001,503,8000000,2019-07-10,2019-08-01,203,203);
+
+insert into telephone values(9876554321,9978654534,6268765498);
+insert into telephone values(9876543210,9878953534,6268863218);
+insert into telephone values(9123456780,6248762998,7895365498);
+
+insert into customer values(1001,432,'sachin','kumar',9687354132,'Chhattisgarh','India','sachin@gmail.com');
+insert into customer values(1002,983,'prakash','sinha',7826543198,'Chhattisgarh','India','ps271@gmail.com');
+insert into customer values(1003,647,'arvind','kumar',6269764378,'Chhattisgarh','India','akg@gmail.com');
+
+insert into car values(501,202,103,'Black','Audi','A6','good model car',2016-05-08);
+insert into car values(502,201,102,'Blue','Mercedees','Benz','Best car',2018-11-21);
+insert into car values(503,203,101,'Red','BMW','X5','Amazing car',2020-02-10);
+
+
+Answer 3 :- 
+
+a. Show the reservation number and the location ID of all rentals on 5/20/2015.
+
+Answer :- select reservationid,locationid from reservation where date ='2015-05-20';
+
+
+b. Show the first and the last name and the mobile phone number of these customers that have rented a car in the category that has label = 'luxury'.
+
+Answer :- select distinct cust.firstname,cust.lastname,cust.mobile from customer cust,reservation resv,category cart, car where cust.customerid=resv.customerid and resv.carid=car.carid and car.categoryid= cart.categoryid and cart.label='luxury';
+
+
+c. Show the total amount of rentals per location ID (pick up).
+
+Answer :- select locationid,count(carid) from reservation group by locationid;
+
+
+d. Show the total amount of rentals per car's category ID and month.
+
+Answer :- select car.categoryid,year(reserv.pickupdate),month(reserv.pickupdate), count(reserv.carid) from reservation resrv,car where reserv.carid=car.carid group by car.categoryid;
+
+
+e. For each rental‟s state (pick up) show the top renting category.
+
+Answer :- create view State as select co.state, cat.label, count(reservationid) as rents from reservation as rd, office as co, car as c, category as cat where rd.pickuplocationid=co.locationid and rd.carID=c.carID and c.categoryid=t.categoryid group by co.state, 
+c.categoryid order by co.state, rents DESC; 
+
+
+f. Show how many rentals there were in May 2015 in „NY‟, „NJ‟ and „CA‟ (in three columns).
+
+Answer :- create view transpose as select o.state, count(r.reservationid) as rentals from 
+reservation as r, office as o where r.pickuplocationid=o.locationid and 
+(o.state="NY" or o.state="NJ" or o.state="CA") and year(r.pickupDate)=2015 and month(r.pickupDate)=5 group by o.state;
+
+
+g. For each month of 2015, count how many rentals had amount greater than this month's average rental amount.
+
+Answer :- select year(reserv.pickupdate),month(reserv.pickupdate), count(reserv.reservationid) from reservation reserv where year(reserv.pickupdate)=2015 and reserv.amount > (select avg(res.amount) from reservation res where month(reserv.pickupdate) =
+month(res.pickupdate) and year(reserv.pickupdate) = year(res.pickupdate)) group by month(pickupdate);
+
+
+h. For each month of 2015, show the percentage change of the total amount of rentals over the total amount of rentals of the same month of 2014.
+
+Answer :- select year(reserv.pickupdate),month(reserv.pickupdate),round((reserv.amount-res.amount)*100/reserv.amount) from reservation res inner join reservation reserv on month(reserv.pickupdate) = month(res.pickupdate) and year(res.pickupdate) = year(reserv.pickupdate)-1 where year(reserv.pickupdate) = 2015;
+
+
+i. For each month of 2015, show in three columns: the total rentals‟ amount of the previous months, the total rentals‟ amount of this month and the total rentals‟ amount of the following months.
+
+Answer :- select year(res.pickupdate),month(res.pickupdate),sum(res.amount) as this_month, (select sum(amount) from reservation where year(res.pickupdate)=2015) as prevous_month,(select sum(reserv.amount) from reservation reserv where month(reserv.pickupdate) <= month(res.pickupdate) and year(res.pickupdate) = month(reserv.pickupdate) group by month(reserv.pickupdate)) as next_month from reservation res where year(res.pickupdate)=2015 group by month(res.pickupdate) );
