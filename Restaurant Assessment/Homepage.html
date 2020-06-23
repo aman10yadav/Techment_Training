@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+	
+	<style>
+	body {
+	 color: blue;
+	}
+	
+		#main-div{
+			background-image: url('../src/restaurant.jpeg');
+    		}
+		#nav-home {
+		    margin-left: 300px;
+		    color: white;
+		}
+		
+		#home{
+			color: white;
+		}
+		
+		.dropdown-menu{
+			color: #e6f6f7;
+		}
+		
+		#dropdown-toggle {
+			color: #e6f6f7;
+		}
+		
+	</style>
+	
+	<script type="text/javascript">
+		function myFunction() {
+			alert("Please Login First !!");
+		}
+		
+		
+		
+	</script>
+</head>
+<body>
+
+<nav id="a" class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul  class="nav navbar-nav">
+      <li><a id="home" href="Menu.html"  >Menu</a></li>
+      <li><a id="home" href="Location.html"  >Different Location</a></li>
+      <li><a id="home" href="About.html"  >About Us</a></li>
+        <li><a id ="nav-home" href="#">ABC Restaurant</a></li>
+
+      </ul>
+      <ul  class="nav navbar-nav navbar-right">
+       <li class="dropdown"> 
+        <a  id="dropdown-toggle" class="dropdown-toggle active"  data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-log-in" ></span> Login
+        </a>
+        <ul class="dropdown-menu" >
+          <a href="LogOut.html" class="confirmation" style="color:#e6f6f7">Log out</a>
+     
+     	 <script type="text/javascript">
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Do you really want to Log Out ??')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+	</script>
+        </ul>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id= "main-div" class="container-fluid"  >
+	<div id ="row1" class="row" >
+			<div class="col-md-3" >
+				<a href="dish.html"><button class="btn btn-primary btn-lg btn-block">Book a Dish</button></a>
+			</div>
+			<div class="col-md-6" ></div>
+			<div class="col-md-3" >
+			</div>
+		</div>
+		</div>
+</div>
+
+
+
+</body>
+</html>

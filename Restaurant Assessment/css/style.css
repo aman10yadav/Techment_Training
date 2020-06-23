@@ -1,0 +1,10 @@
+#main-div{
+	margin-top: -20px;
+	background-image: url('../src/restaurant.jpeg');
+    width:100%;
+	height: 900px;
+}
+
+.rectangle {
+	image: url('../src/rest1.jpg');
+}
